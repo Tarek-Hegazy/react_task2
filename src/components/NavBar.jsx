@@ -30,6 +30,13 @@ export default function Navbar() {
                 Profile
               </Link>
             </li>
+            {token && ( // Conditionally render Create Post link
+              <li className="nav-item">
+                <Link className="nav-link" to="/posts/create">
+                  Create Post
+                </Link>
+              </li>
+            )}
           </ul>
           <ul className="navbar-nav">
             {token ? (

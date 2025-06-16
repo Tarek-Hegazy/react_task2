@@ -16,18 +16,21 @@ export const useAuthStore = create()(
         const { token, refreshToken, clear } = get();
         if (isTokenExpire(token) && isTokenExpire(refreshToken)) {
           clear();
+          set({ loading: false });
           return false;
         }
         if (!isTokenExpire(token) || !isTokenExpire(refreshToken)) {
           if (isTokenExpire(token)) {
             try {
               const res = await refreshTokeAPI({ refreshToken });
-              set({ ...res.data });
+              set({ ...res.data, loading: false });
             } catch {
               clear();
+              set({ loading: false });
               return false;
             }
           }
+          set({ loading: false });
           return true;
         }
         clear();
