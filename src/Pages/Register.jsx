@@ -42,6 +42,26 @@ export default function Register() {
             <p style={{ color: "orange" }}>{errors?.password?.message}</p>
           </div>
           <div className="">
+            <label htmlFor="name">Name :</label>{" "}
+            <input id="name" type="text" {...register("name", {})} />
+            <p style={{ color: "orange" }}>{errors?.name?.message}</p>
+          </div>
+          <div className="">
+            <label htmlFor="username">Username :</label>{" "}
+            <input id="username" type="text" {...register("username", {})} />
+            <p style={{ color: "orange" }}>{errors?.username?.message}</p>
+          </div>
+          <div className="">
+            <label htmlFor="phone">Phone :</label>{" "}
+            <input id="phone" type="text" {...register("phone", {})} />
+            <p style={{ color: "orange" }}>{errors?.phone?.message}</p>
+          </div>
+          <div className="">
+            <label htmlFor="avatar">Avatar URL :</label>{" "}
+            <input id="avatar" type="text" {...register("avatar", {})} />
+            <p style={{ color: "orange" }}>{errors?.avatar?.message}</p>
+          </div>
+          <div className="">
             <input type="submit" value="create my user" />
           </div>
         </form>
