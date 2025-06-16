@@ -1,9 +1,8 @@
-import { ReactNode } from "react";
+import React from "react"; // Changed from import { ReactNode } to import React
 
 export default function Layout({ children }) {
-  return (
-    <div className="row">
-      <div className="col-md-8 offset-md-2">{children}</div>
-    </div>
-  );
+  // The main container and column sizing will be handled by individual pages
+  // or by a more specific layout component if needed.
+  // This keeps the default Layout simple and flexible.
+  return <>{children}</>;
 }

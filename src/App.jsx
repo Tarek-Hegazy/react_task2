@@ -8,7 +8,8 @@ import {
   Profile,
   PostList,
   SinglePost,
-  CreatePost, // Import CreatePost
+  CreatePost,
+  EditPost, // Import EditPost
 } from "@pages";
 import AuthGurdRoute from "./components/AuthGurd";
 
@@ -51,6 +52,14 @@ function App() {
               element={
                 <Layout>
                   <SinglePost />
+                </Layout>
+              }
+            />
+            <Route
+              path="/posts/:id/edit" // Add new route for editing posts
+              element={
+                <Layout>
+                  <EditPost />
                 </Layout>
               }
             />
